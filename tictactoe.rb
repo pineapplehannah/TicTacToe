@@ -14,6 +14,9 @@ class Game
 	player_a = 'X'
 	player_b = 'O'
 
+	winning_combos = 123, 456, 789, 147, 258, 369, 159, 357
+
+
 end
 
 chosen_space = gets.chomp
@@ -29,3 +32,13 @@ def play
 	choice = gets.chomp
 	foo = spaces.index(chosen_space.to_i)
 	spaces[a] = player_a 
+end
+
+def determining_the_winner_control_flow(spaces)
+	if spaces.values_at(0, 1, 2 || 3, 4, 5 || 6, 7, 8 || 0, 3, 6 || 1, 4, 7 || 2, 5, 8 || 0, 4, 8 || 2, 4, 6) == ['X', 'X', 'X'] || ['O', 'O', 'O']
+		puts "game is over. Winner is #{player_a or player_b}"
+	else
+		play
+	end
+end
+
